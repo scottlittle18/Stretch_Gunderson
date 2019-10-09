@@ -5,9 +5,10 @@ using UnityEngine;
 public interface IExtendable
 {
     //Required Properties
-    float MaxExtensionLimit { get; set; }
+    
 
     //Required Methods
-    void Extend();
-    void ShrinkToOriginalSize();
+    void Extend(string clipName);
+    void ResetScale(string clipName);
+    void MassController();
 }
