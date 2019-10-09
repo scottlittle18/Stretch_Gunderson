@@ -48,7 +48,7 @@ public class ExtendArms : Extendable, IExtendable
     public void Extend()
     {
         Debug.Log("extend entered");
-        yAxisLocalScale.localScale = Hozukimaru(extensionSpeed);
+        //yAxisLocalScale.localScale = Hozukimaru(extensionSpeed);
         Debug.Log("extend exit");
     }
 
