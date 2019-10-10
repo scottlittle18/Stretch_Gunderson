@@ -6,6 +6,7 @@ using UnityEngine;
 ///     This Parent class should be used by the parts of the character that the
 /// player will be able to control
 /// </summary>
+[RequireComponent(typeof(Rigidbody2D)), RequireComponent(typeof(Animator))]
 public class Extendable : MonoBehaviour
 {
     #region --Serialized Fields--

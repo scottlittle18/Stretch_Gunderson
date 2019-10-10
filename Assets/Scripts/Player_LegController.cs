@@ -1,22 +1,11 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Uses the animator to extend the player's arms in a way that launches them
-/// </summary>
-public class ExtendArmsUsingAnimator : Extendable, IExtendable
+public class Player_LegController : Extendable, IExtendable
 {
     // Input Variables
     private bool extendObjectInputActive;
-
-    // TODO: Temp Variables
-    [SerializeField]
-    private float rotationSpeed;
-
-    [SerializeField]
-    private Transform shoulderObject;
 
     // Start is called before the first frame update
     void Start()
@@ -29,19 +18,12 @@ public class ExtendArmsUsingAnimator : Extendable, IExtendable
     {
         ListenForInput();
         base.MassController();
-
-        Vector3 mousePoisition = Input.mousePosition;
-        mousePoisition = Camera.main.ScreenToWorldPoint(mousePoisition);
-
-        Vector2 directionToFace = new Vector2(mousePoisition.x - shoulderObject.transform.position.x, mousePoisition.y - shoulderObject.transform.position.y);
-
-        transform.up = -directionToFace;
     }
 
     private void ListenForInput()
     {
         //TODO: Change the name Jump to ExtendArms in Unity && Here
-        extendObjectInputActive = Input.GetButton("ExtendArms");
+        extendObjectInputActive = Input.GetButton("ExtendLegs");
 
         if (extendObjectInputActive)
         {
